@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Grav\Plugin\PTM;
 
+use Grav\Common\Grav;
 use Grav\Common\Plugins;
-use Pimple\Container;
 
 final class PluginInventory
 {
-    private Container $grav;
+    private Grav $grav;
 
-    public function __construct(Container $grav)
+    public function __construct(Grav $grav)
     {
         $this->grav = $grav;
     }

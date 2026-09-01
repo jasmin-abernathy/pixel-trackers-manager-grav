@@ -15,12 +15,28 @@ require_once __DIR__ . '/classes/RuleCatalog.php';
 
 final class PtmPlugin extends Plugin
 {
+    /** @var array<string,int> */
+    public $features = [
+        'blueprints' => 1000,
+    ];
+
     private ?RuleCatalog $ruleCatalog = null;
     private ?PluginInventory $pluginInventory = null;
     private ?FlatFileStorage $storage = null;
 
+    public static function checkRequirements(): bool
+    {
+        return defined('GRAV_VERSION')
+            && version_compare(GRAV_VERSION, '2.0.0', '>=')
+            && PHP_VERSION_ID >= 80300;
+    }
+
     public static function getSubscribedEvents(): array
     {
+        if (!static::checkRequirements()) {
+            return [];
+        }
+
         return [
             'onPluginsInitialized' => ['onPluginsInitialized', 0],
         ];

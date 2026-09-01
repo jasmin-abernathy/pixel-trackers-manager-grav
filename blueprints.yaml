@@ -1,0 +1,51 @@
+name: Pixel Trackers Manager
+slug: ptm
+type: plugin
+version: 0.0.1
+description: Audit local-first des traceurs, services externes et traitements détectables pour Grav.
+icon: shield
+author:
+  name: Le Potager du Web
+  url: https://www.lepotager.org
+homepage: https://ptm.lepotager.org
+bugs: https://github.com/jasmin-abernathy/pixel-trackers-manager-grav/issues
+keywords: grav, privacy, rgpd, gdpr, trackers, audit
+license: GPL-2.0-or-later
+gpm: false
+
+dependencies:
+  - { name: grav, version: '>=2.0.0' }
+
+compatibility:
+  grav:
+    - '2.0'
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: Activer PTM
+      highlight: 1
+      default: 1
+      options:
+        1: Oui
+        0: Non
+      validate:
+        type: bool
+
+    scanner.batch_size:
+      type: number
+      label: Taille d'un lot de scan
+      default: 5
+      validate:
+        min: 1
+        max: 20
+
+    storage.retention:
+      type: number
+      label: Nombre de scans à conserver
+      default: 20
+      validate:
+        min: 1
+        max: 200

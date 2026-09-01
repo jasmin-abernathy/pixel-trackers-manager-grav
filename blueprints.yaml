@@ -15,13 +15,14 @@ gpm: false
 
 dependencies:
   - { name: grav, version: '>=2.0.0' }
+  - { name: php, version: '>=8.3' }
 
 compatibility:
   grav:
     - '2.0'
 
 form:
-  validation: loose
+  validation: strict
   fields:
     enabled:
       type: toggle
@@ -39,6 +40,7 @@ form:
       label: Taille d'un lot de scan
       default: 5
       validate:
+        type: number
         min: 1
         max: 20
 
@@ -47,5 +49,6 @@ form:
       label: Nombre de scans à conserver
       default: 20
       validate:
+        type: number
         min: 1
         max: 200

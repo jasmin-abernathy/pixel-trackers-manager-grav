@@ -1,0 +1,8 @@
+/vendor/
+/.idea/
+/.vscode/
+.DS_Store
+
+# Runtime PTM data belongs to the Grav site's user/data/ptm directory,
+# not to this plugin source repository.
+/user-data/

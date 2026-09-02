@@ -1,5 +1,96 @@
 {
   "schema_version": 1,
-  "catalog_version": "0.0.1",
-  "profiles": []
+  "catalog_version": "0.1.0",
+  "profiles": [
+    {
+      "slug": "admin2",
+      "label": "Admin2",
+      "role": "admin_ui",
+      "privacy_kind": "local_functionality",
+      "severity": "info",
+      "services": [],
+      "note": "Interface d’administration Grav. Sa présence seule n’est ni un traceur ni une preuve de service tiers. Les ressources observées dans la baseline sont embarquées localement."
+    },
+    {
+      "slug": "api",
+      "label": "API",
+      "role": "content_api",
+      "privacy_kind": "data_access_capability",
+      "severity": "review",
+      "services": [],
+      "note": "API REST pouvant exposer ou administrer des contenus et données selon les routes, permissions et méthodes d’authentification configurées. Présence du plugin ≠ exposition publique prouvée."
+    },
+    {
+      "slug": "email",
+      "label": "Email",
+      "role": "email_delivery",
+      "privacy_kind": "external_processing_capability",
+      "severity": "review",
+      "services": [],
+      "note": "Infrastructure d’envoi de courriels. Le traitement dépend du transport réellement configuré (local, SMTP ou prestataire externe)."
+    },
+    {
+      "slug": "error",
+      "label": "Error",
+      "role": "error_page",
+      "privacy_kind": "local_functionality",
+      "severity": "info",
+      "services": [],
+      "note": "Affichage des pages d’erreur. Pas un traceur en soi."
+    },
+    {
+      "slug": "flex-objects",
+      "label": "Flex Objects",
+      "role": "structured_data",
+      "privacy_kind": "data_processing_capability",
+      "severity": "info",
+      "services": [],
+      "note": "Gestion de données structurées dans Grav. La nature des données dépend des objets réellement créés ; aucune donnée personnelle n’est déduite de la seule présence du plugin."
+    },
+    {
+      "slug": "form",
+      "label": "Form",
+      "role": "form_framework",
+      "privacy_kind": "data_collection_capability",
+      "severity": "review",
+      "services": [],
+      "note": "Moteur de formulaires. PTM doit inspecter les formulaires réellement rendus et leurs traitements. Des références à des CAPTCHA dans le code ou la documentation ne constituent pas une preuve qu’un service tiers est actif."
+    },
+    {
+      "slug": "github-markdown-alerts",
+      "label": "Github Markdown Alerts",
+      "role": "content_rendering",
+      "privacy_kind": "local_functionality",
+      "severity": "info",
+      "services": [],
+      "note": "Extension de rendu Markdown. Le nom GitHub ne signifie pas qu’une requête vers GitHub est faite aux visiteurs."
+    },
+    {
+      "slug": "login",
+      "label": "Login",
+      "role": "authentication",
+      "privacy_kind": "local_authentication",
+      "severity": "review",
+      "services": [],
+      "note": "Gestion de l’authentification et des sessions. À cartographier comme traitement local ; les éventuels fournisseurs d’authentification ou CAPTCHA externes doivent être prouvés séparément."
+    },
+    {
+      "slug": "problems",
+      "label": "Problems",
+      "role": "diagnostics",
+      "privacy_kind": "local_functionality",
+      "severity": "info",
+      "services": [],
+      "note": "Diagnostic de l’installation Grav. Pas un traceur en soi."
+    },
+    {
+      "slug": "shortcode-core",
+      "label": "Shortcode Core",
+      "role": "content_rendering",
+      "privacy_kind": "local_functionality",
+      "severity": "info",
+      "services": [],
+      "note": "Infrastructure de shortcodes. Les services externes éventuels viennent des shortcodes réellement utilisés ou d’extensions complémentaires, pas de Shortcode Core seul."
+    }
+  ]
 }

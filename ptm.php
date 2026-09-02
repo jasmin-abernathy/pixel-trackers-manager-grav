@@ -49,7 +49,10 @@ final class PtmPlugin extends Plugin
         }
 
         $this->ruleCatalog = new RuleCatalog(__DIR__ . '/data/rules.json');
-        $this->pluginInventory = new PluginInventory($this->grav);
+        $this->pluginInventory = new PluginInventory(
+            $this->grav,
+            __DIR__ . '/data/grav-plugins.json'
+        );
 
         $dataRoot = $this->grav['locator']->findResource('user-data://', true, true);
         if (!is_string($dataRoot) || $dataRoot === '') {

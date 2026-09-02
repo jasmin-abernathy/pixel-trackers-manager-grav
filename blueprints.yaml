@@ -1,7 +1,7 @@
 name: Pixel Trackers Manager
 slug: ptm
 type: plugin
-version: 0.0.1
+version: 0.0.2
 description: Audit local-first des traceurs, services externes et traitements détectables pour Grav.
 icon: shield
 author:
